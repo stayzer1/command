@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $expirience = $_POST['expirience'];
 
 
-    $to = "stayzer2@gmail.com";
+    $to = "duckhowienacxmv7@gmail.com";
     $subject = "Новое сообщение с сайта";
     $body = "Имя: $name\nТелефон: $phone\nМесто проживания: $place\nВозраст: $age\nЗарплата: $expirience\nОпыт: $expirience";
 

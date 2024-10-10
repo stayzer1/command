@@ -1,5 +1,6 @@
 .social {
   padding-top: 120px;
+  position: relative;
 }
 .social__title {
   font-weight: 700;
@@ -21,10 +22,30 @@
     width: clamp(3rem, 2.629rem + 1.524vw, 4rem);
   }
 }
+.social-img-abs {
+  position: absolute;
+  left: 0;
+  top: -152%;
+  z-index: -1;
+}
+@media screen and (max-width: 1024px) {
+  .social-img-abs {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .social-img-abs {
+    top: -91%;
+  }
+}
 @media screen and (max-width: 500px) {
   .social__title {
     br {
       display: block;
     }
+  }
+  .social-img-abs {
+    left: -12%;
+    top: -100%;
   }
 }

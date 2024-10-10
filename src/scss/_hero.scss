@@ -59,12 +59,14 @@
   left: 0;
   top: 27%;
   z-index: -1;
+  width: clamp(21.875rem, 10.49rem + 17.788vw, 26.5rem);
 }
 .hero-abs-img-3 {
   position: absolute;
   top: 60%;
   right: 0;
   z-index: -1;
+  width: clamp(18.75rem, 1.365rem + 27.163vw, 25.813rem);
 }
 @media screen and (max-width: 1024px) {
   .hero-abs-img-1 {
@@ -81,11 +83,14 @@
   }
   .hero-abs-img-2 {
     left: -6%;
+    width: 230px;
+    top: 51%;
   }
   .hero-abs-img-3 {
     rotate: 21deg;
-    top: 82%;
+    top: 88%;
     right: -8%;
+    width: 200px;
   }
 }
 @media screen and (max-width: 500px) {

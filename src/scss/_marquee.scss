@@ -1,0 +1,32 @@
+.marquee {
+  padding-top: clamp(6.25rem, 4.857rem + 5.714vw, 10rem);
+  padding-bottom: 120px;
+  position: relative;
+  // overflow-x: hidden;
+  width: 100vw;
+  max-width: 100%;
+}
+.marquee__track {
+  width: 100%;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+.marquee__content {
+  font-weight: 700;
+  font-size: clamp(2rem, 0.839rem + 4.762vw, 5.125rem);
+  text-align: center;
+  color: #000;
+  img {
+    width: clamp(3rem, 1.979rem + 4.19vw, 5.75rem);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

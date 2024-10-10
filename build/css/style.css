@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
 
 * {
@@ -215,10 +217,10 @@ body.locked {
 .conditions__items {
   display: grid;
   grid-template-columns: repeat(4, 240px);
-  grid-template-rows: 275px 275px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-rows: 1fr 1fr;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -232,6 +234,8 @@ body.locked {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 3;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -339,6 +343,7 @@ body.locked {
   position: absolute;
   left: 0;
   top: -23%;
+  z-index: 2;
 }
 
 .about__text {
@@ -701,6 +706,67 @@ body.locked {
   font-size: clamp(0.875rem, 0.736rem + 0.571vw, 1.25rem);
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  display: none;
+  /* Скрыто по умолчанию */
+  position: fixed;
+  /* Остается на месте */
+  z-index: 100;
+  /* На переднем плане */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Полная ширина */
+  height: 100%;
+  /* Полная высота */
+  overflow: auto;
+  /* Включает прокрутку при необходимости */
+  background-color: black;
+  /* Чёрный фон */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Полупрозрачный */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% сверху и по центру */
+  border-radius: 24px;
+  padding: 24px 30px;
+  width: 328px;
+  position: relative;
+}
+
+#modal-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1e1e1e;
+}
+
+#modal-text li {
+  list-style-image: url("../img/Ellipse.svg");
+}
+
+.close-btn {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  color: #b465da;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 1449.98px) {

@@ -1,45 +1,48 @@
-// ************************ Модальное окно ************************ //
-// mf
-.modal__wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    // display: none;
-
-    .modal {
-        background: white;
-        padding: 25px;
-        border-radius: 5px;
-        height: 350px;
-        width: 300px;
-
-        &__title {
-            text-align: center;
-        }
-
-        &__close {
-            cursor: pointer;
-            display: flex;
-            justify-content: flex-end;
-        }
-    }
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Остается на месте */
+  z-index: 100; /* На переднем плане */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включает прокрутку при необходимости */
+  background-color: rgb(0, 0, 0); /* Чёрный фон */
+  background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный */
 }
 
-// ************************ Кнопка вызова модального окна ************************ //
-.modal__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 30px;
-    height: 50px;
-    width: 150px;
-    cursor: pointer;
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% сверху и по центру */
+  border-radius: 24px;
+  padding: 24px 30px;
+  width: 328px;
+  position: relative;
+}
+#modal-text {
+  font-weight: 400;
+  font-size: 14px;
+
+  line-height: 20px;
+  //   line-height: 140%;
+  color: #1e1e1e;
+  li {
+    list-style-image: url("../img/Ellipse.svg");
+  }
+}
+.close-btn {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  color: #b465da;
+  font-size: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  opacity: 0.5;
+  text-decoration: none;
+  cursor: pointer;
 }

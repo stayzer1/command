@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const indicators = document.querySelectorAll(".step");
   const inputs = document.querySelectorAll("input");
   const form = document.getElementById("form");
+  const formSection = document.querySelector(".form");
 
   let currentStep = 0;
 
@@ -74,10 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    // Сбор данных формы
     const formData = new FormData(form);
 
-    // Отправка данных формы с помощью fetch
     fetch("send_email.php", {
       method: "POST",
       body: formData,
@@ -86,10 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.text();
       })
       .then((data) => {
-        // Скрываем форму
         form.style.display = "none";
 
-        // Создаем новое сообщение
         const messageContainer = document.createElement("div");
         messageContainer.classList.add("success-message");
         messageContainer.innerHTML = `
@@ -113,12 +110,63 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
         // Добавляем сообщение в контейнер
-        document.body.appendChild(messageContainer);
+        formSection.appendChild(messageContainer);
       })
       .catch((error) => {
         console.error("Ошибка:", error);
         alert("Ошибка при отправке формы.");
       });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".conditions__item--btn");
+  const modal = document.getElementById("modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalText = document.getElementById("modal-text");
+  const closeModal = document.querySelector(".close-btn");
+  const body = document.body;
+
+  const texts = {
+    0: {
+      text: "<ul><li>Графік роботи з 7:00 - 16:00</li><li>2 перерви на каву</li><li>Смачні ланчі за рахунок компанії щодня</li><li>Комфортна зона відпочинку з PlayStation</li></ul>",
+    },
+    1: {
+      text: "Знаходимося в центрі міста",
+    },
+    2: {
+      text: "Наша компанія зацікавлена у високому заробітку своїх співробітників. Для покращення результатів проводимо постійні корпоративні заходи, розіграші та багато інших бонусів. Індивідуальний підхід до кожного працівника та надання всіх умов для комфортного та стабільного розвитку.",
+    },
+    3: {
+      text: "Заробітна плата складається з фіксованої ставки і % від закритої угоди. У середньому наші співробітники заробляють від 1500$ на місяць.",
+    },
+    4: {
+      text: "Наша компанія регулярно проводить брифінги та лекції з професійними бізнес коучами для забезпечення додаткової мотивації та стрімкого кар'єрного зростання.<br><br> Не пропустіть свою можливість:<br><br> розпочавши з посади «лінійного менеджера», пройти навчання та стати старшим менеджером, що дасть змогу значно підвищити ваш дохід.<br><br> І це ще не все! Найвідповідальнішим і найталановитішим співробітникам ми пропонуємо можливість відкрити власну франшизу з нашою підтримкою і під нашим керівництвом.",
+    },
+    5: {
+      text: "Якщо в тебе є люди з досвідом або вмотивовані та з великим бажанням розвиватися - пишіть нашому HR менеджеру для подальшої співпраці.",
+    },
+    6: {
+      text: "Наша компанія руйнує стереотипи про типові умови інших офісів. Ми гарантуємо вашу безпеку, оскільки вона є пріоритетною для нас!",
+    },
+  };
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+      modalText.innerHTML = texts[index].text;
+      modal.style.display = "block";
+      body.classList.add("locked");
+    });
+  });
+
+  closeModal.addEventListener("click", function () {
+    modal.style.display = "none";
+    body.classList.remove("locked");
+  });
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      body.classList.remove("locked");
+    }
   });
 });
 

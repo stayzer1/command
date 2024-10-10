@@ -12,14 +12,16 @@
 .conditions__items {
   display: grid;
   grid-template-columns: repeat(4, 240px);
-  grid-template-rows: 275px 275px;
-  align-items: center;
+  grid-template-rows: 1fr 1fr;
+  align-items: end;
   justify-content: center;
   row-gap: clamp(3.75rem, 0.673rem + 4.808vw, 5rem);
   column-gap: clamp(0.313rem, -9.841rem + 15.865vw, 4.438rem);
 }
 .conditions__item {
   display: flex;
+  position: relative;
+  z-index: 3;
   align-items: center;
   justify-content: center;
   flex-direction: column;

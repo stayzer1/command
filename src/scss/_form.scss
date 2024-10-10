@@ -1,17 +1,25 @@
 .form {
+  position: relative;
+  padding-top: 120px;
+}
+.form-abs-img {
+  position: absolute;
+  right: 0;
+  top: -64%;
+  z-index: -1;
 }
 .form__title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem);
   text-align: center;
   color: #000;
 }
 .form__subtitle {
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(0.875rem, 0.829rem + 0.19vw, 1rem);
   padding-top: 16px;
   padding-bottom: 40px;
-  line-height: 22px;
+  line-height: clamp(1.25rem, 1.204rem + 0.19vw, 1.375rem);
   // line-height: 140%;
   text-align: center;
   color: #000;
@@ -27,19 +35,16 @@
 .step {
   border-radius: 50%;
   padding: 10px;
-  width: 72px;
-  height: 72px;
+  width: clamp(3rem, 2.443rem + 2.286vw, 4.5rem);
+  height: clamp(3rem, 2.443rem + 2.286vw, 4.5rem);
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  // background: linear-gradient(315deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
-  // background-clip: text;
-  // -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
-  font-size: 36px;
-  line-height: 50px;
+  font-size: clamp(1.5rem, 1.221rem + 1.143vw, 2.25rem);
+  line-height: clamp(2.125rem, 1.754rem + 1.524vw, 3.125rem);
   text-align: center;
   position: relative;
   p {
@@ -55,7 +60,7 @@
 .step::before {
   content: "";
   position: absolute;
-  inset: 0px;
+  inset: -2px;
   padding: 2px;
   background: linear-gradient(315deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
   z-index: -1;
@@ -111,7 +116,7 @@
   box-shadow: 0 4px 12px 0 rgba(238, 96, 156, 0.25);
   background: linear-gradient(315deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
   font-weight: 500;
-  font-size: 16px;
+  font-size: clamp(0.813rem, 0.743rem + 0.286vw, 1rem);
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -177,5 +182,43 @@
     // line-height: 140%;
     text-align: center;
     color: black;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .progress-indicator {
+    max-width: 520px;
+  }
+  .step-line {
+    width: 25%;
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    input {
+      margin-right: 0;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .form {
+    padding-top: 0;
+  }
+  .form-abs-img {
+    width: 300px;
+    right: -12%;
+    top: -49%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .progress-indicator {
+    max-width: 330px;
+  }
+  .input-container {
+    input {
+      width: 330px;
+    }
   }
 }

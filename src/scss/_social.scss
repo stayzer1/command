@@ -1,0 +1,30 @@
+.social {
+  padding-top: 120px;
+}
+.social__title {
+  font-weight: 700;
+  font-size: clamp(2rem, 1.629rem + 1.524vw, 3rem);
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  padding-bottom: 40px;
+  br {
+    display: none;
+  }
+}
+.social__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  img {
+    width: clamp(3rem, 2.629rem + 1.524vw, 4rem);
+  }
+}
+@media screen and (max-width: 500px) {
+  .social__title {
+    br {
+      display: block;
+    }
+  }
+}

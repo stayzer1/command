@@ -406,19 +406,31 @@ body.locked {
   }
 }
 
+.form {
+  position: relative;
+  padding-top: 120px;
+}
+
+.form-abs-img {
+  position: absolute;
+  right: 0;
+  top: -64%;
+  z-index: -1;
+}
+
 .form__title {
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 1.157rem + 0.381vw, 1.5rem);
   text-align: center;
   color: #000;
 }
 
 .form__subtitle {
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(0.875rem, 0.829rem + 0.19vw, 1rem);
   padding-top: 16px;
   padding-bottom: 40px;
-  line-height: 22px;
+  line-height: clamp(1.25rem, 1.204rem + 0.19vw, 1.375rem);
   text-align: center;
   color: #000;
 }
@@ -441,8 +453,8 @@ body.locked {
 .step {
   border-radius: 50%;
   padding: 10px;
-  width: 72px;
-  height: 72px;
+  width: clamp(3rem, 2.443rem + 2.286vw, 4.5rem);
+  height: clamp(3rem, 2.443rem + 2.286vw, 4.5rem);
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -455,8 +467,8 @@ body.locked {
           justify-content: center;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
-  font-size: 36px;
-  line-height: 50px;
+  font-size: clamp(1.5rem, 1.221rem + 1.143vw, 2.25rem);
+  line-height: clamp(2.125rem, 1.754rem + 1.524vw, 3.125rem);
   text-align: center;
   position: relative;
 }
@@ -477,7 +489,7 @@ body.locked {
 .step::before {
   content: "";
   position: absolute;
-  inset: 0px;
+  inset: -2px;
   padding: 2px;
   background: -o-linear-gradient(135deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
   background: linear-gradient(315deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
@@ -553,7 +565,7 @@ body.locked {
   background: -o-linear-gradient(135deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
   background: linear-gradient(315deg, #9158d0 0%, #f180ff 50%, #ff7be7 100%);
   font-weight: 500;
-  font-size: 16px;
+  font-size: clamp(0.813rem, 0.743rem + 0.286vw, 1rem);
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -645,6 +657,52 @@ body.locked {
   color: black;
 }
 
+.social {
+  padding-top: 120px;
+}
+
+.social__title {
+  font-weight: 700;
+  font-size: clamp(2rem, 1.629rem + 1.524vw, 3rem);
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  padding-bottom: 40px;
+}
+
+.social__title br {
+  display: none;
+}
+
+.social__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 48px;
+}
+
+.social__links img {
+  width: clamp(3rem, 2.629rem + 1.524vw, 4rem);
+}
+
+.copyright {
+  padding-top: clamp(6.25rem, 5.786rem + 1.905vw, 7.5rem);
+  padding-bottom: clamp(2.5rem, 1.177rem + 5.429vw, 6.063rem);
+}
+
+.copyright__text {
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.736rem + 0.571vw, 1.25rem);
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
 @media (max-width: 1449.98px) {
   .container {
     max-width: 1200px;
@@ -700,6 +758,35 @@ body.locked {
 
   .about__image img {
     width: clamp(20.5rem, 17.194rem + 13.565vw, 25.875rem);
+  }
+
+  .progress-indicator {
+    max-width: 520px;
+  }
+
+  .step-line {
+    width: 25%;
+  }
+
+  .input-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 20px;
+  }
+
+  .input-container input {
+    margin-right: 0;
   }
 }
 
@@ -771,11 +858,31 @@ body.locked {
     width: clamp(18.75rem, 4.306rem + 59.259vw, 32.75rem);
     top: -9%;
   }
+
+  .form {
+    padding-top: 0;
+  }
+
+  .form-abs-img {
+    width: 300px;
+    right: -12%;
+    top: -49%;
+  }
 }
 
 @media (max-width: 767.98px) {
   .container {
     max-width: 740px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .progress-indicator {
+    max-width: 330px;
+  }
+
+  .input-container input {
+    width: 330px;
   }
 }
 
@@ -786,6 +893,10 @@ body.locked {
 
   .hero__btn svg {
     width: 35px;
+  }
+
+  .social__title br {
+    display: block;
   }
 }
 

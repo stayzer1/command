@@ -184,6 +184,11 @@
     color: black;
   }
 }
+.form__title {
+  br {
+    display: none;
+  }
+}
 @media screen and (max-width: 1024px) {
   .progress-indicator {
     max-width: 520px;
@@ -219,6 +224,15 @@
   .input-container {
     input {
       width: 330px;
+    }
+  }
+  .form-abs-img {
+    right: -18%;
+    top: -53%;
+  }
+  .form__title {
+    br {
+      display: block;
     }
   }
 }

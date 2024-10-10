@@ -6,11 +6,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $place = $_POST['place'];
     $age = $_POST['age'];
     $salary = $_POST['salary'];
+    $expirience = $_POST['expirience'];
 
 
     $to = "stayzer2@gmail.com";
     $subject = "Новое сообщение с сайта";
-    $body = "Имя: $name\nТелефон: $phone\nМесто проживания: $place\nВозраст: $age\nЗарплата: $salary\nОпыт: $expirience";
+    $body = "Имя: $name\nТелефон: $phone\nМесто проживания: $place\nВозраст: $age\nЗарплата: $expirience\nОпыт: $expirience";
 
     if (mail($to, $subject, $body)) {
         echo "Сообщение отправлено успешно!";

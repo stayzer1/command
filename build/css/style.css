@@ -662,6 +662,10 @@ body.locked {
   color: black;
 }
 
+.form__title br {
+  display: none;
+}
+
 .social {
   padding-top: 120px;
 }
@@ -949,6 +953,15 @@ body.locked {
 
   .input-container input {
     width: 330px;
+  }
+
+  .form-abs-img {
+    right: -18%;
+    top: -53%;
+  }
+
+  .form__title br {
+    display: block;
   }
 }
 
